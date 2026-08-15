@@ -1,0 +1,3 @@
+{"id":"validation-001","prediction":"{\"contains_pii\":true,\"entities\":[\"email\"]}"}
+{"id":"validation-002","prediction":"{\"contains_pii\":false,\"entities\":[]}"}
+{"id":"validation-003","prediction":"{\"contains_pii\":true,\"entities\":[\"phone\"]}"}

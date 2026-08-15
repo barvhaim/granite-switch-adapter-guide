@@ -1,0 +1,6 @@
+{"id":"train-001","input":"Email the receipt to alex@example.com.","output":"{\"contains_pii\":true,\"entities\":[\"email\"]}"}
+{"id":"train-002","input":"The deployment finished successfully.","output":"{\"contains_pii\":false,\"entities\":[]}"}
+{"id":"train-003","input":"Call me at 555-0102 after lunch.","output":"{\"contains_pii\":true,\"entities\":[\"phone\"]}"}
+{"id":"train-004","input":"Ship the package to 12 Example Street.","output":"{\"contains_pii\":true,\"entities\":[\"address\"]}"}
+{"id":"train-005","input":"The API returned status code 429.","output":"{\"contains_pii\":false,\"entities\":[]}"}
+{"id":"train-006","input":"Morgan Lee approved the request.","output":"{\"contains_pii\":true,\"entities\":[\"name\"]}"}

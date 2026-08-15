@@ -1,0 +1,3 @@
+{"id":"validation-001","input":"Send updates to taylor@example.org.","output":"{\"contains_pii\":true,\"entities\":[\"email\"]}"}
+{"id":"validation-002","input":"The nightly test suite passed.","output":"{\"contains_pii\":false,\"entities\":[]}"}
+{"id":"validation-003","input":"The callback number is 555-0199.","output":"{\"contains_pii\":true,\"entities\":[\"phone\"]}"}

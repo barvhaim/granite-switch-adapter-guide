@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "granite-switch-adapter-guide"
+version = "0.1.0"
+description = "Executable guide for training and composing custom Granite Switch adapters"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "Apache-2.0"
+authors = [{ name = "njs2017" }]
+dependencies = [
+  "jsonschema>=4.23",
+  "PyYAML>=6.0.2",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+train = [
+  "accelerate>=1.2",
+  "datasets>=3.2",
+  "peft>=0.18.1",
+  "torch>=2.10",
+  "transformers>=5.5.1,<5.10",
+  "trl>=1.0,<2",
+]
+compose = ["granite-switch[compose,hf]>=0.1.0"]
+serve = [
+  "granite-switch[vllm]>=0.1.0",
+  "openai>=1.0",
+]
+
+[project.scripts]
+granite-adapter-guide = "granite_adapter_guide.cli:main"
+
+[project.urls]
+Repository = "https://github.com/njs2017/granite-switch-adapter-guide"
+Documentation = "https://github.com/njs2017/granite-switch-adapter-guide#readme"
+
+[dependency-groups]
+dev = [
+  "pytest>=9.0",
+  "ruff>=0.16",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/granite_adapter_guide"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

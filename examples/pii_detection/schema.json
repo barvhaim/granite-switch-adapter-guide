@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "contains_pii": {
+      "type": "boolean"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["email", "phone", "address", "name", "other"]
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": ["contains_pii", "entities"],
+  "additionalProperties": false
+}
