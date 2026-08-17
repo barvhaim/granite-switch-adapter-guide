@@ -47,6 +47,26 @@ uv run python scripts/compose_model.py \
 
 The final command prints the exact Composer invocation without running a model build. Add `--execute` only after installing the compose dependencies and producing real adapter weights.
 
+## Apple Silicon notebook path
+
+Five Jupyter notebooks provide a guarded end-to-end path for an Apple Silicon Mac with 64 GB unified memory:
+
+1. [Verify a real MPS forward/backward operation](notebooks/00_macos_mps_preflight.ipynb).
+2. [Define and validate the dataset and contract](notebooks/01_prepare_and_validate_data.ipynb).
+3. [Train a conservative LoRA smoke test](notebooks/02_train_lora_on_macos.ipynb).
+4. [Train aLoRA after the LoRA quality gate](notebooks/03_train_alora_on_macos.ipynb).
+5. [Evaluate, package, and preview composition](notebooks/04_evaluate_package_and_compose.ipynb).
+
+Install and launch them from the repository root:
+
+```bash
+uv sync --extra train --extra notebook
+uv run python -m ipykernel install --user --name granite-switch-adapter-guide
+uv run jupyter lab
+```
+
+Training, tokenizer downloads, inference, and composition are disabled by default inside the notebooks. Review the paths and parameters, then enable the explicit `RUN_*` gates one stage at a time. The Mac path uses PyTorch MPS for training and direct Hugging Face evaluation; vLLM serving remains a Linux/CUDA deployment path.
+
 ## Guided learning path
 
 1. [Design a narrow function contract](docs/01-design-the-contract.md)

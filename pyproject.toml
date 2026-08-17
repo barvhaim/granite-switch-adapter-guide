@@ -32,6 +32,10 @@ train = [
   "trl>=1.0,<2",
 ]
 compose = ["granite-switch[compose,hf]>=0.1.0"]
+notebook = [
+  "ipykernel>=6.29",
+  "jupyterlab>=4.4",
+]
 serve = [
   "granite-switch[vllm]>=0.1.0",
   "openai>=1.0",
