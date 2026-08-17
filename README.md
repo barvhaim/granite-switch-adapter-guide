@@ -28,7 +28,7 @@ function contract
 Requirements: Python 3.11+, [uv](https://docs.astral.sh/uv/), no GPU, no credentials, no model download.
 
 ```bash
-git clone https://github.com/njs2017/granite-switch-adapter-guide.git
+git clone https://github.com/barvhaim/granite-switch-adapter-guide.git
 cd granite-switch-adapter-guide
 uv sync --group dev
 

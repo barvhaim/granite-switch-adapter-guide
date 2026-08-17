@@ -45,8 +45,8 @@ serve = [
 granite-adapter-guide = "granite_adapter_guide.cli:main"
 
 [project.urls]
-Repository = "https://github.com/njs2017/granite-switch-adapter-guide"
-Documentation = "https://github.com/njs2017/granite-switch-adapter-guide#readme"
+Repository = "https://github.com/barvhaim/granite-switch-adapter-guide"
+Documentation = "https://github.com/barvhaim/granite-switch-adapter-guide#readme"
 
 [dependency-groups]
 dev = [
